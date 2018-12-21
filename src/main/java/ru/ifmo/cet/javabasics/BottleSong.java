@@ -69,14 +69,14 @@ public class BottleSong {
         word.put(80, "eighty");
         word.put(90, "ninety");
     }
-    public String Numbers(int b){
+    public String numbers(int b){
         if((b>=21)&&(b%10 != 0)){
             return (word.get((b/10)*10)+" "+word.get(b%10));
         }
         else return word.get(b);
     }
     public String getBottleSongLyrics() {
-        String Lyrics=new String();
+        String Lyrics="";
         for(int i=99;i>0;i=i-b){
             Lyrics+=i+" bottle";
             if(i>1) Lyrics+="s";
@@ -87,20 +87,20 @@ public class BottleSong {
             Lyrics+="Take ";
             if((i-b)<0){
                 b=i;
-                Lyrics+=Numbers(b);
+                Lyrics+=numbers(b);
                 Lyrics+=" down and pass around, no more bottles of beer on the wall.\n";
                 break;
             }
             else{
                 if((i-b)==0){
-                    Lyrics+=Numbers(b);
+                    Lyrics+=numbers(b);
                     Lyrics+=" down and pass around, no more bottle";
                     if(i-b!=1) Lyrics+="s ";
                     Lyrics+="of beer on the wall.\n";
                     break;
                 }
             }
-            Lyrics+=Numbers(b);
+            Lyrics+=numbers(b);
             Lyrics+=" down and pass around, ";
             Lyrics+=(i-b);
             Lyrics+=" bottle";
